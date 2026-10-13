@@ -10,12 +10,35 @@ use Monolog\Handler\StreamHandler;
  * @author geoskull
  */
 class Controller {
+    /** @var \Spot\Locator */
     public $spot;
+    /** @var \Spot\Mapper|null */
+    public $mapper;
+    /** @var \Aura\Session\Session */
     public $session_handle;
+    /** @var \Aura\Session\Segment */
     public $session;
+    /** @var string */
     public $entity;
+    /** @var object */
     public $mail;
+    /** @var object */
     public $bread;
+    /** @var Logger */
+    public $log;
+
+    /**
+     * Obtiene el mapper de una entidad con el tipo declarado para el IDE.
+     *
+     * Uso:  $userMapper = $this->mapper(\Entity\User::class);
+     *
+     * @template T of \Spot\Entity
+     * @param  class-string<T> $entity
+     * @return \Spot\Mapper<T>
+     */
+    public function mapper($entity) {
+        return $this->spot->mapper($entity);
+    }
     /**
      * Constructor de la clase
      * @global type $session_handle
@@ -77,14 +100,5 @@ class Controller {
         if (!$this->mail->send()) {
             echo "Mailer Error: " . $this->mail->ErrorInfo;
         }
-    }
-}
-/**
- * Carga dinamica de todos los controladores
- */
-foreach (scandir(__DIR__) as $class) {
-    $buffer = explode(".", $class);
-    if (end($buffer) == "php") {
-        require_once( __DIR__ . '/' . $class );
     }
 }

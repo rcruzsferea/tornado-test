@@ -1,13 +1,26 @@
 {
     "require":{
+        "php": ">=8.1",
         "mustache/mustache": "^2.9",
         "vlucas/spot2": "~2.0",
         "filp/whoops": "^2.0",
         "monolog/monolog": "^1.17",
         "zaphpa/zaphpa": "^2.1.1",
         "aura/session": "^2.0",
-        "phpmailer/phpmailer": "~5.2",
+        "phpmailer/phpmailer": "^6.9",
         "bshaffer/oauth2-server-php": "~1.8",
         "smottt/wideimage":"dev-master"
+    },
+    "autoload":{
+        "psr-4":{
+            "Tornado\\":[
+                "tornado/",
+                "utilerias/"
+            ],
+            "Entity\\":"model/"
+        },
+        "classmap":[
+            "controllers/"
+        ]
     }
 }

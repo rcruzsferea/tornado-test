@@ -2,6 +2,23 @@
     namespace Entity;
     use Spot\EntityInterface as Entity;
     use Spot\MapperInterface as Mapper;
+    /**
+     * @property int    $id
+     * @property string $nombre
+     * @property string $codigo
+     * @property float  $markup
+     * @property string $direccion
+     * @property string $cp
+     * @property string $telefono
+     * @property string $fax
+     * @property string $branch
+     * @property string $depto
+     * @property int    $ciudad_id
+     * @property bool   $oculto
+     * @property \Entity\Ciudad $ciudad
+     * @property \Spot\Entity\Collection|\Entity\AgenteViaje[] $agentes
+     * @property \Spot\Entity\Collection|\Entity\ContactoAgencia[] $contactos
+     */
     class Algo extends \Spot\Entity
     {
         protected static $table = 'algo';

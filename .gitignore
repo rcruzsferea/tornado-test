@@ -6,3 +6,7 @@ composer.lock
 /tornado/mail_config.php
 #ingnorando intel del sublime
 .phpintel/
+#tailwind
+/node_modules/
+/tools/tailwindcss
+package-lock.json

@@ -1,0 +1,46 @@
+{{% BLOCKS }}
+{{< panel }}
+    {{$content}}
+        <div class="">
+            <div class="">
+                <h1 class="text-2xl font-bold text-gray-500">Formulario para registrar un nuevo usuario</h1>
+                <a href="/" class="text-sky-500" >Regresar al home</a>
+            </div>
+            <form method="post" class="w-full mx-auto space-y-4 rounded-lg bg-white p-6 shadow-md" id='registrar-usuario'>
+                <h1 class="text-2xl font-bold text-slate-800">Registrar usuario</h1>
+
+                <div>
+                    <label for="name" class="mb-1 block text-sm font-medium text-slate-700">Nombre</label>
+                    <input type="text" id="name" name="name" required
+                           class="w-full rounded border border-slate-300 px-3 py-2 text-slate-800 focus:border-slate-500 focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="email" class="mb-1 block text-sm font-medium text-slate-700">Email</label>
+                    <input type="email" id="email" name="email" required
+                           class="w-full rounded border border-slate-300 px-3 py-2 text-slate-800 focus:border-slate-500 focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="username" class="mb-1 block text-sm font-medium text-slate-700">Username</label>
+                    <input type="text" id="username" name="username" required
+                           class="w-full rounded border border-slate-300 px-3 py-2 text-slate-800 focus:border-slate-500 focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="password" class="mb-1 block text-sm font-medium text-slate-700">Password</label>
+                    <input type="password" id="password" name="password" required
+                           class="w-full rounded border border-slate-300 px-3 py-2 text-slate-800 focus:border-slate-500 focus:outline-none">
+                </div>
+
+                <button type="submit"
+                        class="w-full rounded bg-slate-800 px-4 py-2 font-semibold text-white hover:bg-slate-700">
+                    Registrar
+                </button>
+            </form>
+        </div>
+        {{$scripts}}
+            <script src="/resources/js/User/viewRegistrarUsuario.js" type="module"></script>
+        {{/scripts}}
+    {{/content}}
+{{/ panel }}

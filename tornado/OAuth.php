@@ -2,7 +2,6 @@
 
 namespace Tornado;
 use OAuth2 ;
-require "UserCredentials.php";
 /**
  * Class OAuth on Tornado
  * @package Tornado

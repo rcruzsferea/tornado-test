@@ -1,5 +1,4 @@
 <?php
-require 'utilerias/Imagenes.php';
 /**
  * Controlador para paginas estaticas, por ejemplo el login
  * La seleccion de vista se hace de la siguiente forma  
